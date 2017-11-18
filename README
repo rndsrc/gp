@@ -1,0 +1,10 @@
+This directory contains a LaTeX document class, proposal.cls, written
+for Chi-kwan Chan's scientific proposals, and a simple example that
+uses it.
+
+The document class is based on article.cls and with features extracted
+from az.cls and cv.cls.
+
+proposal.cls is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
