@@ -58,10 +58,6 @@
 
 %------------------------------------------------------------------------------
 % Page style:
-\title{Scientific Research Proposal}
-\markboth{\@title}{\@title}
-\title{}
-
 \newcommand\prop@srule{\hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
 \newcommand\prop@frule{\hspace{-\linewidth}\rule[-.8ex]{\linewidth}{1.2pt}%
                        \hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
