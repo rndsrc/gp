@@ -64,8 +64,7 @@
 
 \newcommand\prop@srule{\hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
 \newcommand\prop@frule{\hspace{-\linewidth}\rule[-.8ex]{\linewidth}{1.2pt}%
-                     \hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
-
+                       \hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
 \newcommand{\ps@fancy}{
   \let\@mkboth\@gobbletwo
   \def\@oddhead {\reset@font\huge\textsc\@title\hfil\textsc\@author\prop@frule}
@@ -175,6 +174,10 @@
 
 % Redefine \part*{}, which takes only one argument
 \def\@spart#1{\markboth{#1}{#1}\@afterheading}
+
+%------------------------------------------------------------------------------
+% Set Page Title
+\newcommand\pagetitle[1]{\markboth{#1}{#1}}
 
 %------------------------------------------------------------------------------
 % Make cover letter
