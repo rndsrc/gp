@@ -1,6 +1,6 @@
-% Begin `proposal.cls' --- alpha version
+% Begin `gp.cls' --- alpha version
 %
-% A Simple Scientific Research Proposal Document Class
+% A Simple Scientific Research Grant Proposal Document Class
 %
 % Written by Chi-kwan Chan (Fall 2017)
 %
@@ -9,10 +9,10 @@
 %------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 
-\ProvidesClass{proposal}[%
+\ProvidesClass{gp}[%
   2017/11/18%
   Black Hole Initiative, Harvard University%
-  A Simple Scientific Research Proposal Document Class%
+  A Simple Scientific Research Grant Proposal Document Class%
 ]
 
 %==============================================================================
@@ -51,42 +51,42 @@
 
 %------------------------------------------------------------------------------
 % Spacing:
-\newcommand\prop@parsep{1.ex}
-\newcommand\prop@subsep{.5ex}
-\newcommand\prop@tlssep{.5ex}
-\newcommand\prop@ilssep{.5ex}
+\newcommand\gp@parsep{1.ex}
+\newcommand\gp@subsep{.5ex}
+\newcommand\gp@tlssep{.5ex}
+\newcommand\gp@ilssep{.5ex}
 
 %------------------------------------------------------------------------------
 % Page style:
-\newcommand\prop@srule{\hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
-\newcommand\prop@frule{\hspace{-\linewidth}\rule[-.8ex]{\linewidth}{1.2pt}%
+\newcommand\gp@srule{\hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
+\newcommand\gp@frule{\hspace{-\linewidth}\rule[-.8ex]{\linewidth}{1.2pt}%
                        \hspace{-\linewidth}\rule[-1.ex]{\linewidth}{0.4pt}}
 \newcommand{\ps@fancy}{
   \let\@mkboth\@gobbletwo
-  \def\@oddhead {\reset@font\huge\textsc\@title\hfil\textsc\@author\prop@frule}
-  \def\@evenhead{\reset@font\huge\textsc\@author\hfil\textsc\@title\prop@frule}
+  \def\@oddhead {\reset@font\huge\textsc\@title\hfil\textsc\@author\gp@frule}
+  \def\@evenhead{\reset@font\huge\textsc\@author\hfil\textsc\@title\gp@frule}
 }
 \renewcommand{\ps@plain}{
   \let\@mkboth\@gobbletwo
-  \def\@oddhead {\reset@font\textsc\rightmark\hfil\textsc\@author\prop@srule}
-  \def\@evenhead{\reset@font\textsc\@author\hfil\textsc\leftmark \prop@srule}
+  \def\@oddhead {\reset@font\textsc\rightmark\hfil\textsc\@author\gp@srule}
+  \def\@evenhead{\reset@font\textsc\@author\hfil\textsc\leftmark \gp@srule}
 }
 \pagestyle{plain}
 
 %------------------------------------------------------------------------------
 % Redefine subsubsection and paragraphs:
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-  {\prop@parsep}{1.0ex \@plus 1.0ex}{\normalfont\normalsize\bfseries}}
+  {\gp@parsep}{1.0ex \@plus 1.0ex}{\normalfont\normalsize\bfseries}}
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-  {\prop@parsep}{-1em}{\normalfont\normalsize\bfseries}}
+  {\gp@parsep}{-1em}{\normalfont\normalsize\bfseries}}
 \renewcommand\subparagraph{\@startsection{subparagraph}{5}{\z@}%
-  {\prop@subsep}{-1em}{\normalfont\normalsize\bfseries}}
+  {\gp@subsep}{-1em}{\normalfont\normalsize\bfseries}}
 
 %------------------------------------------------------------------------------
 % Tabbed list
 \newenvironment{tlist}{\list{}
                {\parskip\z@\topsep\z@\partopsep\z@
-                \itemsep\prop@tlssep\itemindent\z@
+                \itemsep\gp@tlssep\itemindent\z@
                 \parsep\z@\listparindent\z@
                 \labelsep\z@
                 \labelwidth1in
@@ -99,7 +99,7 @@
 % Wide tabbed list
 \newenvironment{Tlist}{\list{}
                {\parskip\z@\topsep\z@\partopsep\z@
-                \itemsep\prop@tlssep\itemindent\z@
+                \itemsep\gp@tlssep\itemindent\z@
                 \parsep\z@\listparindent\z@
                 \labelsep\z@
                 \labelwidth1.25in
@@ -111,7 +111,7 @@
 
 % Inverse enumerate list
 \RequirePackage[parskip=0pt,topsep=0pt,partopsep=0pt,
-                itemsep=\prop@ilssep,itemindent=0pt,
+                itemsep=\gp@ilssep,itemindent=0pt,
                 parsep=0pt,listparindent=0pt,
                 labelsep=.5em,
                 labelwidth=2.em,
@@ -134,12 +134,12 @@
 % Main code
 %------------------------------------------------------------------------------
 % Title page information:
-\newcommand\info   [1]{\gdef\prop@info     {#1}}
-\newcommand\phone  [1]{\gdef\prop@phone    {#1}}
-\newcommand\email  [1]{\gdef\prop@email    {#1}}
-\newcommand\website[1]{\gdef\prop@website  {#1}}
-\newcommand\repos  [1]{\gdef\prop@repos    {#1}}
-\newcommand\address[1]{\gdef\prop@address  {#1}}
+\newcommand\info   [1]{\gdef\gp@info     {#1}}
+\newcommand\phone  [1]{\gdef\gp@phone    {#1}}
+\newcommand\email  [1]{\gdef\gp@email    {#1}}
+\newcommand\website[1]{\gdef\gp@website  {#1}}
+\newcommand\repos  [1]{\gdef\gp@repos    {#1}}
+\newcommand\address[1]{\gdef\gp@address  {#1}}
 
 % Cover letter
 \newcommand\background[1]{\gdef\cl@background{#1}}
@@ -185,7 +185,7 @@
     \setlength\parskip{0.7em}
     {\raggedleft\begin{tabular}{l@{}}
       \ignorespaces%
-      \ifx\@empty\cl@address\prop@address\else\cl@address\fi\\*[\parskip]
+      \ifx\@empty\cl@address\gp@address\else\cl@address\fi\\*[\parskip]
       \@date
       \end{tabular}\par}
     \cl@recipient\par\vspace{\parskip}
@@ -214,18 +214,18 @@
   {
     \parindent\z@
     \begin{minipage}{0.50\linewidth}\raggedright
-      \prop@address\\
-      \prop@info
+      \gp@address\\
+      \gp@info
     \end{minipage}
     \begin{minipage}{0.50\linewidth}\raggedleft
-      Phone:~\prop@phone\\
-      E-mail:~\mailto{\prop@email}\\
-      Website:~\url{\prop@website}\\
-      \url{\prop@repos}
+      Phone:~\gp@phone\\
+      E-mail:~\mailto{\gp@email}\\
+      Website:~\url{\gp@website}\\
+      \url{\gp@repos}
     \end{minipage}
   }
   \vspace*{-3.5pt}
 }
 
 %==============================================================================
-% End `proposal.cls'
+% End `gp.cls'
